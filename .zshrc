@@ -41,10 +41,10 @@ zstyle ':completion:*' list-colors 'di=36' 'ln=35' 'ex=32'
 
 #ターミナルのタイトル
 case "${TERM}" in
-    kterm*|xterm)
-	precmd() {
-	    echo -ne "\033]0;${USER}@${HOST}\007"
-	}
+  kterm*|xterm)
+    precmd() {
+        echo -ne "\033]0;${USER}@${HOST}\007"
+    }
 	;;
 esac
 
@@ -135,6 +135,9 @@ alias mv='mv -i'
  
 alias mkdir='mkdir -p'
 
+alias be='bundle exec'
+alias B='-b 0.0.0.0'
+
 # cygstart コマンドでopen コマンド に設定
 alias open='explorer'
 
@@ -180,6 +183,7 @@ case ${OSTYPE} in
     darwin*)
         #Mac用の設定
         export CLICOLOR=1
+
         alias ls='ls -G -F'
         ;;
     linux*)

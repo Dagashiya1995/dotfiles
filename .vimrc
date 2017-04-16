@@ -13,6 +13,8 @@ set hidden
 set showcmd
 " jjでノーマルモードに
 inoremap <silent> jj <ESC>
+" 回り込みを有効にする
+set whichwrap=b,s,h,l,<,>,[,],~
 
 
 " 見た目系
