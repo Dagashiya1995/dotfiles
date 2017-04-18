@@ -5,6 +5,10 @@ set fenc=utf-8
 set nobackup
 " スワップファイルを作らない
 set noswapfile
+" undofile設定
+set undolevels     =200
+set undodir        =~/.vim/_undo
+set undofile
 " 編集中のファイルが変更されたら自動で読み直す
 set autoread
 " バッファが編集中でもその他のファイルを開けるように
@@ -16,6 +20,10 @@ inoremap <silent> jj <ESC>
 " 回り込みを有効にする
 set whichwrap=b,s,h,l,<,>,[,],~
 
+" undoDirectoryがなければ作る
+if !isdirectory(expand('~/.vim/_undo'))
+  call mkdir(expand('~/.vim/_undo'), 'p')
+endif
 
 " 見た目系
 " 行番号を表示
@@ -24,8 +32,13 @@ set number
 set cursorline
 " 行末の1文字先までカーソルを移動できるように
 set virtualedit=onemore
-" インデントはスマートインデント
+" インデント、シンタックス有効化
+filetype plugin indent on
+syntax on
+" インデント
 set smartindent
+set autoindent
+set cindent
 " ビープ音を可視化
 set visualbell
 " 括弧入力時の対応する括弧を表示
@@ -43,10 +56,11 @@ nnoremap k gk
 " Tab文字を半角スペースにする
 set expandtab
 " 行頭以外のTab文字の表示幅（スペースいくつ分）
-set tabstop=2
+set softtabstop=2
 " 行頭でのTab文字の表示幅
 set shiftwidth=2
-
+"行頭の余白内で Tab を打ち込むと、'shiftwidth' の数だけインデントする。
+set smarttab
 
 " 検索系
 " 検索文字列が小文5字の場合は大文字小文字を区別なく検索する
