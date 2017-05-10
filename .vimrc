@@ -19,6 +19,8 @@ set showcmd
 inoremap <silent> jj <ESC>
 " 回り込みを有効にする
 set whichwrap=b,s,h,l,<,>,[,],~
+" shared clipboard to system
+set clipboard=unnamed
 
 " undoDirectoryがなければ作る
 if !isdirectory(expand('~/.vim/_undo'))
