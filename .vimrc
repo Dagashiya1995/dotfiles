@@ -88,3 +88,9 @@ augroup END
 
 colorscheme monokai-phoenix
 set t_ut=
+
+" plug in
+call plug#begin('~/.vim/plugged')
+Plug 'pangloss/vim-javascript'
+Plug 'maxmellon/vim-jsx-pretty'
+call plug#end()
