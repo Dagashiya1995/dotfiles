@@ -19,8 +19,29 @@ set showcmd
 inoremap <silent> jj <ESC>
 " 回り込みを有効にする
 set whichwrap=b,s,h,l,<,>,[,],~
+set backspace=indent,eol,start
+" 小文字の検索でも大文字も見つかるようにする
+set ignorecase
+" ただし大文字も含めた検索の場合はその通りに検索する
+set smartcase
 " shared clipboard to system
 set clipboard=unnamed
+" visible column line
+set colorcolumn=80,100
+
+"インサートモードでも移動
+inoremap <c-d> <delete>
+inoremap <c-j> <down>
+inoremap <c-k> <up>
+inoremap <c-h> <left>
+inoremap <c-l> <right>
+
+" 補完
+inoremap { {}<LEFT>
+inoremap [ []<LEFT>
+inoremap ( ()<LEFT>
+inoremap ' ''<LEFT>
+inoremap " ""<LEFT>
 
 " undoDirectoryがなければ作る
 if !isdirectory(expand('~/.vim/_undo'))
@@ -88,6 +109,27 @@ augroup END
 
 colorscheme monokai-phoenix
 set t_ut=
+
+" ファイル名表示
+set statusline=%F
+" 変更チェック表示
+set statusline+=%m
+" 読み込み専用かどうか表示
+set statusline+=%r
+" ヘルプページなら[HELP]と表示
+set statusline+=%h
+" プレビューウインドウなら[Prevew]と表示
+set statusline+=%w
+" これ以降は右寄せ表示
+set statusline+=%=
+" file encoding
+set statusline+=[ENC=%{&fileencoding}]
+" 現在行数/全行数
+set statusline+=[LOW=%l/%L]
+" ステータスラインを常に表示(0:表示しない、1:2つ以上ウィンドウがある時だけ表示)
+set laststatus=2
+
+highlight statusline ctermfg=black ctermbg=grey
 
 " plug in
 call plug#begin('~/.vim/plugged')

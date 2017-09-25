@@ -1,7 +1,6 @@
 ########################################
 # 環境変数
 export LANG=ja_JP.UTF-8
-source /etc/profile.d/*.sh
 
 # 色を使用出来るようにする
 autoload -Uz colors
@@ -137,9 +136,6 @@ alias mkdir='mkdir -p'
 
 alias be='bundle exec'
 alias B='-b 0.0.0.0'
-
-# cygstart コマンドでopen コマンド に設定
-alias open='explorer'
 
 # cygstart コマンドでsudo コマンドに設定 
 #alias sudo='cygstart --action=runas'
