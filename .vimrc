@@ -5,10 +5,6 @@ set fenc=utf-8
 set nobackup
 " スワップファイルを作らない
 set noswapfile
-" undofile設定
-set undolevels     =200
-set undodir        =~/.vim/_undo
-set undofile
 " 編集中のファイルが変更されたら自動で読み直す
 set autoread
 " バッファが編集中でもその他のファイルを開けるように
@@ -42,6 +38,8 @@ inoremap [ []<LEFT>
 inoremap ( ()<LEFT>
 inoremap ' ''<LEFT>
 inoremap " ""<LEFT>
+" shared clipboard to system
+set clipboard=unnamed
 
 " undoDirectoryがなければ作る
 if !isdirectory(expand('~/.vim/_undo'))
