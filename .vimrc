@@ -7,6 +7,8 @@ set nobackup
 set noswapfile
 " 編集中のファイルが変更されたら自動で読み直す
 set autoread
+" undofileを作らない
+set noundofile
 " バッファが編集中でもその他のファイルを開けるように
 set hidden
 " 入力中のコマンドをステータスに表示する
