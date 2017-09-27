@@ -131,8 +131,24 @@ set laststatus=2
 
 highlight statusline ctermfg=black ctermbg=grey
 
+augroup InsertHook
+  autocmd!
+  autocmd VimEnter * call s:StatusLine('Init')
+  autocmd InsertEnter * call s:StatusLine('Enter')
+  autocmd InsertLeave * call s:StatusLine('Leave')
+augroup END
+
+function! s:StatusLine(mode)
+  if a:mode == 'Enter'
+    highlight StatusLine ctermfg=white ctermbg=blue cterm=NONE guifg=white guibg=blue
+  else
+    highlight StatusLine ctermfg=white ctermbg=grey cterm=NONE guifg=white guibg=grey
+  endif
+endfunction
+
 " plug in
 call plug#begin('~/.vim/plugged')
 Plug 'pangloss/vim-javascript'
+Plug 'TomiLabo/vim-tmng'
 Plug 'maxmellon/vim-jsx-pretty'
 call plug#end()
