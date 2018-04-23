@@ -24,8 +24,10 @@ set ignorecase
 set smartcase
 " shared clipboard to system
 set clipboard=unnamed
-" visible column line
-set colorcolumn=80,100
+" macvimの自動改行無効
+autocmd FileType text setlocal textwidth=0
+" 自動改行無効
+set tw=0  
 
 "インサートモードでも移動
 inoremap <c-d> <delete>

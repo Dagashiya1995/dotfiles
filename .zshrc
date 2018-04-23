@@ -2,6 +2,11 @@
 # 環境変数
 export LANG=ja_JP.UTF-8
 
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+export PATH="$HOME/local/bin:$PATH"
+eval "$(pyenv init -)"
+
 # 色を使用出来るようにする
 autoload -Uz colors
 colors
@@ -137,6 +142,8 @@ alias mkdir='mkdir -p'
 alias be='bundle exec'
 alias B='-b 0.0.0.0'
 
+alias gpp='g++ -std=c++11'
+
 # cygstart コマンドでsudo コマンドに設定 
 #alias sudo='cygstart --action=runas'
 if [[ -n "$PS1" ]]; then
@@ -192,3 +199,4 @@ esac
 
 # /cygdrive/c/Program\ Files/Docker\ Toolbox/start.sh
 # eval $(docker-machine env)
+export PATH=$PATH:/Users/ueyuki/.nodebrew/current/bin
