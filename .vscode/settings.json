@@ -1,0 +1,75 @@
+{
+  //----------------------------------------------------------
+  // vscodeのeditorの設定
+  //----------------------------------------------------------
+  "editor.insertSpaces": true, // tab キーを押すとスペースが挿入されます。
+  "editor.tabSize": 2, // tabをデフォルトで2スペースにする
+  "editor.autoIndent": true,
+  "vim.useSystemClipboard": true,
+  "vim.hlsearch": true,
+  "vim.visualstar": true,
+  "vim.useCtrlKeys": true,
+  "vim.whichwrap": "h,l,<,>,[,]",
+  "editor.detectIndentation": false,
+  "vim.insertModeKeyBindings": [
+    {
+      "before": [
+        "j",
+        "j"
+      ],
+      "after": [
+        "<Esc>"
+      ]
+    },
+    {
+      "before": [
+        "<c-j>"
+      ],
+      "after": [
+        "<down>"
+      ]
+    },
+    {
+      "before": [
+        "<c-k>"
+      ],
+      "after": [
+        "<up>"
+      ]
+    },
+    {
+      "before": [
+        "<c-h>"
+      ],
+      "after": [
+        "<left>"
+      ]
+    },
+    {
+      "before": [
+        "<c-l>"
+      ],
+      "after": [
+        "<right>"
+      ]
+    },
+  ],
+  "vim.highlightedyank.enable": true, //yankした箇所をハイライト表示にする
+  "vim.highlightedyank.color": "rgba(0, 240, 170, 0.5)", //yankした時の色
+  "vim.highlightedyank.duration": 150, //yankした時の色の表示時間
+  //========================================================================
+  //markdown settings
+  //========================================================================
+  "markdown.preview.breaks": true,
+  "terminal.external.osxExec": "iTerm.app",
+
+  //----------------------------------------------------------
+  // terminalの設定 
+  //----------------------------------------------------------
+  "terminal.integrated.shell.osx": "/usr/local/bin/zsh",
+  "vs-kubernetes": {
+    "vs-kubernetes.helm-path": "/Users/s07930/.vs-kubernetes/tools/helm/darwin-amd64/helm",
+    "vs-kubernetes.minikube-path": "/Users/s07930/.vs-kubernetes/tools/minikube/darwin-amd64/minikube",
+    "vs-kubernetes.draft-path": "/Users/s07930/.vs-kubernetes/tools/draft/darwin-amd64/draft"
+  }
+}
